@@ -14,7 +14,7 @@ student_name = st.sidebar.selectbox('Select a student', df['student_name'].uniqu
 st.write('**Student Information**')
 st.write('Name:', student_name)
 st.write('Level:', df['level'][df['student_name'] == student_name].values[0])
-st.write('Teacher:', df['Teacher'][df['student_name'] == student_name].values[0])
+st.write('Teacher:', df['teacher'][df['student_name'] == student_name].values[0])
 
 # Display the student's grades
 st.write('**Levels**')
