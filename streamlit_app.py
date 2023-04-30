@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import re
 
 # Load the data
 df = pd.read_csv('hebrew_school_data.csv')
@@ -32,7 +33,11 @@ colors = {
   "black": "black"
 }
 
-st.table(df, style={'myRow': {'background-color': colors[df['level']]}})
+def get_color(level):
+  level = level.lower()
+  return colors.get(level, "white")
+
+st.table(df, style={'myRow': {'background-color': get_color(df['level'])}})
 
 # Display the student's homework
 st.write('**Homework**')
