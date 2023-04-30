@@ -20,6 +20,20 @@ st.write('Teacher:', df['teacher'][df['student_name'] == student_name].values[0]
 st.write('**Levels**')
 st.table(df[df['student_name'] == student_name][['level', 'stripe']])
 
+colors = {
+  "red": "red",
+  "orange": "orange",
+  "yellow": "yellow",
+  "green": "green",
+  "blue": "blue",
+  "violet": "violet",
+  "brown": "brown",
+  "grey": "grey",
+  "black": "black"
+}
+
+st.table(df, style={'myRow': {'background-color': colors[df['level']]}})
+
 # Display the student's homework
 st.write('**Homework**')
 st.table(df[df['student_name'] == student_name][['homework_1', 'homework_2', 'homework_3']])
