@@ -11,8 +11,10 @@ st.sidebar.title('Hebrew School Alef Champ Progress Tracker')
 # Create a dropdown menu for the teacher
 teacher_name = st.sidebar.selectbox('Select a teacher', df['teacher'].unique())
 
-# Create a dropdown menu for the student
-student_name = st.sidebar.selectbox('Select a student', df['student_name'].unique())
+class_df = df[df['teacher'] == teacher_name]
+
+# Create a dropdown menu for the students in that class
+student_name = st.sidebar.selectbox('Select a student', class_df['student_name'].values)
 
 # Display the student's information
 st.write('**Class Information**')
@@ -28,7 +30,7 @@ st.write('Teacher Name:', teacher_name)
 
 # Display the students
 st.write('**Student Levels**')
-st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe']])
+st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']])
 
 # colors = {
 #   "red": "red",
@@ -49,8 +51,8 @@ st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe']])
 # st.table(df, style={'myRow': {'background-color': get_color(df['level'])}})
 
 # Display the student's homework
-st.write('**Homework**')
-st.table(df[df['student_name'] == student_name][['homework_1']])
+st.write('**Homework for Parents**')
+st.table(df[df['student_name'] == student_name][['homework_2']])
 
 # # Create a button that allows parents to log in
 # st.sidebar.button('Log in as parent')
