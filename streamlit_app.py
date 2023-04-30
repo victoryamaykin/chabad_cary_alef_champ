@@ -8,8 +8,17 @@ df = pd.read_csv('hebrew_school_data.csv')
 # Create a sidebar
 st.sidebar.title('Hebrew School Alef Champ Progress Tracker')
 
+# Create a dropdown menu for the teacher
+teacher_name = st.sidebar.selectbox('Select a teacher', df['teacher'].unique())
+
 # Create a dropdown menu for the student
 student_name = st.sidebar.selectbox('Select a student', df['student_name'].unique())
+
+# Display the student's information
+st.write('**Class Information**')
+st.write('Teacher Name:', teacher_name)
+st.write('Level:', df['level'][df['student_name'] == student_name].values[0])
+st.write('Stripe:', df['stripe'][df['student_name'] == student_name].values[0])
 
 # Display the student's information
 st.write('**Student Information**')
@@ -41,7 +50,7 @@ st.table(df, style={'myRow': {'background-color': get_color(df['level'])}})
 
 # Display the student's homework
 st.write('**Homework**')
-st.table(df[df['student_name'] == student_name][['homework_1', 'homework_2', 'homework_3']])
+st.table(df[df['student_name'] == student_name][['homework_1']])
 
 # # Create a button that allows parents to log in
 # st.sidebar.button('Log in as parent')
