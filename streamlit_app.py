@@ -24,20 +24,20 @@ st.table(df[df['student_name'] == student_name][['level', 'stripe']])
 st.write('**Homework**')
 st.table(df[df['student_name'] == student_name][['homework_1', 'homework_2', 'homework_3']])
 
-# Create a button that allows parents to log in
-st.sidebar.button('Log in as parent')
+# # Create a button that allows parents to log in
+# st.sidebar.button('Log in as parent')
 
-# If the parent clicks the button, display a form where they can enter their login credentials
-if st.sidebar.button('Log in as parent'):
-    st.sidebar.write('**Parent Login**')
-    username = st.sidebar.text_input('Username')
-    password = st.sidebar.text_input('Password')
+# # If the parent clicks the button, display a form where they can enter their login credentials
+# if st.sidebar.button('Log in as parent'):
+#     st.sidebar.write('**Parent Login**')
+#     username = st.sidebar.text_input('Username')
+#     password = st.sidebar.text_input('Password')
 
-    # If the login credentials are correct, display the student's homework
-    if username == 'parent_username' and password == 'parent_password':
-        st.write('**Homework**')
-        st.table(df[df['student_name'] == student_name][['homework_1', 'homework_2', 'homework_3']])
+#     # If the login credentials are correct, display the student's homework
+#     if username == 'parent_username' and password == 'parent_password':
+#         st.write('**Homework**')
+#         st.table(df[df['student_name'] == student_name][['homework_1', 'homework_2', 'homework_3']])
 
-    # If the login credentials are incorrect, display an error message
-    else:
-        st.sidebar.write('Invalid username or password.')
+#     # If the login credentials are incorrect, display an error message
+#     else:
+#         st.sidebar.write('Invalid username or password.')
