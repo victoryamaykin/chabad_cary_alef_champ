@@ -27,11 +27,17 @@ if password == pw:
 
         st.write(f"Update progress for {student_name}")
 
+        levels = ["White", "Red", "Orange", "Yellow", "Green", "Blue"]
+        
         # Get the level 
-        level = st.radio('Level', options = ["White", "Red", "Orange", "Yellow", "Green", "Blue"])
-
+        level = st.radio('Level', options = levels, \
+                        index =  levels.index(df.loc[df['student_name'] == student_name, 'level']))
+        
+        stripes = [1,2,3]
+        
         # Get the stripe
-        stripe = st.radio('Stripe', options = [1,2,3])
+        stripe = st.radio('Stripe', options = stripes, \
+                          index = stripes.index(df.loc[df['student_name'] == student_name, 'stripe']))
 
         # student homework
         homework_1 = st.text_input(f"Enter homework for {student_name}")
