@@ -18,6 +18,7 @@ class_df = df[df['teacher'] == teacher_name]
 student_name = st.sidebar.selectbox('Select a student', class_df['student_name'].values)
 
 password = st.sidebar.text_input('Enter password to update')
+password = 'matzah613'
 
 # If the password is corect, show the update form
 if password == pw:
@@ -47,9 +48,6 @@ if password == pw:
             df.loc[df['student_name'] == student_name, 'stripe'] = stripe
             df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
             df.loc[df['student_name'] == student_name, 'homework_2'] = homework_2
-            
-        # Display the updated dataframe
-        st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']])
         
 else:
     st.sidebar.write('Incorrect password. Please contact database admin Victor Yamaykin.')
