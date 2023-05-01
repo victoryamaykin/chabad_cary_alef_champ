@@ -53,15 +53,14 @@ if password == pw:
             df.loc[df['student_name'] == student_name, 'stripe'] = stripe
             df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
         
+        st.write("***************")
         st.write("Add new student")
         
         name = st.text_input('Student name')
 
-        submitted1 = st.form_submit_button("Submit")
-
         # Update the dataframe
-        if submitted1:
-            new_student = pd.DataFrame({'student_name': name, 'level': level, 'stripe': stripe, 'homework_1': ''})
+        if submitted:
+            new_student = pd.DataFrame({'student_name': name, 'teacher': teacher_name, 'level': level, 'stripe': stripe, 'homework_1': ''})
             df = df.append(new_student, ignore_index=True)
 
 # Display the student's information
