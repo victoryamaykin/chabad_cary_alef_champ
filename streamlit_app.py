@@ -25,12 +25,20 @@ with st.form('update_df'):
     # Get the stripe
     stripe = st.radio('Stripe', options = [1,2,3])
     
+    # student homework
+    homework_1 = st.text_input("Enter homework for student")
+    
+    # parent homework
+    homework_2 =  st.text_input("Enter homework for parent")
+    
     submitted = st.form_submit_button("Submit")
     
     # Update the dataframe
     if submitted:
         df.loc[df['student_name'] == student_name, 'level'] = level
         df.loc[df['student_name'] == student_name, 'stripe'] = stripe
+        df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
+        df.loc[df['student_name'] == student_name, 'homework_2'] = homework_2
 
 # Display the student's information
 st.write('**Class Information**')
