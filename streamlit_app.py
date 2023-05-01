@@ -37,9 +37,6 @@ if password == pw:
         # student homework
         homework_1 = st.text_input(f"Enter homework for {student_name}")
 
-        # parent homework
-    #     homework_2 =  st.text_input("Enter homework for parent")
-
         submitted = st.form_submit_button("Submit")
 
         # Update the dataframe
@@ -47,10 +44,6 @@ if password == pw:
             df.loc[df['student_name'] == student_name, 'level'] = level
             df.loc[df['student_name'] == student_name, 'stripe'] = stripe
             df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
-            df.loc[df['student_name'] == student_name, 'homework_2'] = homework_2
-        
-else:
-    st.sidebar.write('Incorrect password. Please contact database admin Victor Yamaykin.')
 
 # Display the student's information
 st.write('**Class Information**')
@@ -59,7 +52,3 @@ st.write('Teacher Name:', teacher_name)
 # Display the students
 st.write('**Student Levels**')
 st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']])
-
-# Display the parent's homework
-# st.write('**Homework for Parents**')
-# st.table(df[df['student_name'] == student_name][['homework_2']])
