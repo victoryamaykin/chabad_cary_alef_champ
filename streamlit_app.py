@@ -48,7 +48,7 @@ if password == pw:
             df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
             df.loc[df['student_name'] == student_name, 'homework_2'] = homework_2
 else:
-    st.write('Incorrect password. Please contact database admin Victor Yamaykin.')
+    st.sidebar.write('Incorrect password. Please contact database admin Victor Yamaykin.')
 
 # Display the student's information
 st.write('**Class Information**')
