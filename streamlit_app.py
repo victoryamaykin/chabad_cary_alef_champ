@@ -18,6 +18,8 @@ class_df = df[df['teacher'] == teacher_name]
 student_name = st.sidebar.selectbox('Select a student', class_df['student_name'].values)
 
 password = st.sidebar.text_input('Enter password to update')
+# debug mode
+password = 'matzah613'
 
 # If the password is corect, show the update form
 if password == pw:
@@ -31,13 +33,13 @@ if password == pw:
         
         # Get the level 
         level = st.radio('Level', options = levels, \
-                         index = levels.index(df.loc[df['student_name'] == student_name, 'level'].astype(str)))
+                         index = levels.index(df.loc[df['student_name'] == student_name, 'level'].values.item()))
         
         stripes = [1,2,3]
         
         # Get the stripe
         stripe = st.radio('Stripe', options = stripes, \
-                          index = stripes.index(df.loc[df['student_name'] == student_name, 'stripe'].astype(str)))
+                          index = stripes.index(df.loc[df['student_name'] == student_name, 'stripe'].values.item()))
 
         # student homework
         homework_1 = st.text_input(f"Enter homework for {student_name}")
