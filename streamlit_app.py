@@ -1,12 +1,8 @@
 import time, os
-import logging
 import streamlit as st
 import pandas as pd
 import re
 from pw import pw
-
-setup_logging()
-logger = logging.getLogger('app')
 
 # Load the data
 df = pd.read_csv('hebrew_school_data.csv')
