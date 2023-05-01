@@ -23,7 +23,7 @@ with st.form('update_df'):
     level = st.text_input('Level')
     
     # Get the stripe
-    stripe = st.number_input('Stripe')
+    stripe = st.radio('Stripe', options = [1,2,3])
     
     submitted = st.form_submit_button("Submit")
     
