@@ -60,7 +60,7 @@ if password == pw:
 
         # Update the dataframe
         if submitted:
-            new_student = pd.DataFrame({'student_name': name, 'teacher': teacher_name, 'level': level, 'stripe': stripe, 'homework_1': ''})
+            new_student = pd.DataFrame({'student_name': name, 'level': level, 'stripe': stripe, 'teacher': teacher_name, 'homework_1': homework_1})
             df = df.append(new_student, ignore_index=True)
 
 # Display the student's information
