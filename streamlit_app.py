@@ -29,7 +29,7 @@ with st.form('update_df'):
     homework_1 = st.text_input("Enter homework for student")
     
     # parent homework
-    homework_2 =  st.text_input("Enter homework for parent")
+#     homework_2 =  st.text_input("Enter homework for parent")
     
     submitted = st.form_submit_button("Submit")
     
@@ -49,6 +49,6 @@ st.write('**Student Levels**')
 keys = class_df['student_name'].values
 st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']])
 
-# Display the student's homework
-st.write('**Homework for Parents**')
-st.table(df[df['student_name'] == student_name][['homework_2']])
+# Display the parent's homework
+# st.write('**Homework for Parents**')
+# st.table(df[df['student_name'] == student_name][['homework_2']])
