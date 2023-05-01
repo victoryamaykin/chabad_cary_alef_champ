@@ -20,7 +20,7 @@ student_name = st.sidebar.selectbox('Select a student', class_df['student_name']
 with st.form('update_df'):
 
     # Get the level 
-    level = st.text_input('Level')
+    level = st.radio('Level', options = ["White", "Red", "Orange", "Yellow", "Green", "Blue"])
     
     # Get the stripe
     stripe = st.radio('Stripe', options = [1,2,3])
