@@ -18,7 +18,9 @@ student_name = st.sidebar.selectbox('Select a student', class_df['student_name']
 
 # Create a form
 with st.form('update_df'):
-
+    
+    st.write(f"Update progress for {student_name}")
+    
     # Get the level 
     level = st.radio('Level', options = ["White", "Red", "Orange", "Yellow", "Green", "Blue"])
     
@@ -26,7 +28,7 @@ with st.form('update_df'):
     stripe = st.radio('Stripe', options = [1,2,3])
     
     # student homework
-    homework_1 = st.text_input("Enter homework for student")
+    homework_1 = st.text_input(f"Enter homework for {student_name}")
     
     # parent homework
 #     homework_2 =  st.text_input("Enter homework for parent")
