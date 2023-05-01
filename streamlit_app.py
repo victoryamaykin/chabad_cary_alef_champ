@@ -49,7 +49,7 @@ def get_color(level):
   level = level.lower()
   return colors[level]
 
-st.table(df, style={f'{student_name}': {'background-color': get_color(df['level'])}})
+st.table(df, style={student_name: {'background-color': get_color(df['level'])}})
 
 # Display the student's homework
 st.write('**Homework for Parents**')
