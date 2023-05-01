@@ -16,6 +16,20 @@ class_df = df[df['teacher'] == teacher_name]
 # Create a dropdown menu for the students in that class
 student_name = st.sidebar.selectbox('Select a student', class_df['student_name'].values)
 
+# Create a form
+with st.form('update_df'):
+
+    # Get the level 
+    level = st.text_input('Level')
+    
+    # Get the stripe
+    stripe = st.number_input('Stripe')
+
+    # Update the dataframe
+    if st.button('Update'):
+        df.loc[df['student_name'] == student_name, 'level'] = level
+        df.loc[df['student_name'] == student_name, 'stripe'] = stripe
+
 # Display the student's information
 st.write('**Class Information**')
 st.write('Teacher Name:', teacher_name)
