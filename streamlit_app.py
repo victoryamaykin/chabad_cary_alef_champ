@@ -53,6 +53,35 @@ if password == pw:
             df.loc[df['student_name'] == student_name, 'stripe'] = stripe
             df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
 
+            
+st.siderbar.write('**Add a new student**')
+# If the password is corect, show the update form
+if password == pw:
+
+    # Create a form
+    with st.sidebar.form('update_df'):
+
+        st.write(f"Add new student")
+        
+        name = st.text_input('Student name')
+
+        levels = ["White", "Red", "Orange", "Yellow", "Green", "Blue"]
+        
+        # Get the level 
+        level = st.radio('Level', options = levels)
+        
+        stripes = [1,2,3]
+        
+        # Get the stripe
+        stripe = st.radio('Stripe', options = stripes)
+
+        submitted1 = st.form_submit_button("Submit")
+
+        # Update the dataframe
+        if submitted1:
+            new_student = pd.DataFrame({'student_name': name, 'level': level, 'stripe': stripe, 'homework_1': ''})
+            df = df.append(new_student, ignore_index=True)
+
 # Display the student's information
 st.write('**Class Information**')
 st.write('Teacher Name:', teacher_name)
