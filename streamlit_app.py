@@ -52,16 +52,9 @@ if password == pw:
             df.loc[df['student_name'] == student_name, 'level'] = level
             df.loc[df['student_name'] == student_name, 'stripe'] = stripe
             df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
-
-            
-st.siderbar.write('**Add a new student**')
-# If the password is corect, show the update form
-if password == pw:
-
-    # Create a form
-    with st.sidebar.form('update_df'):
-
-        st.write(f"Add new student")
+        
+        st.write("***************")
+        st.write("Add new student")
         
         name = st.text_input('Student name')
 
