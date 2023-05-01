@@ -1,5 +1,7 @@
-student_name,level,stripe,teacher,homework_1, recording
-Adam,Yellow,1,R. Gavi Schwei,Review p.1 in the Reader, =HYPERLINK('alef.png')
-David,Red,3,R. Gavi Schwei,Review p.18 in the Reader, =HYPERLINK('alef.png')
-Sarah,Orange,3,Morah Chana,Review p.36 in the Reader, =HYPERLINK('alef.png')
-Jacob,Violet,1,R. Yisroel Cotlar,Review p.3 in the Reader, =HYPERLINK('alef.png')
+student_name,level,stripe,teacher,homework_1
+Adam,Yellow,1,R. Gavi Schwei,Review p.1 in the Reader
+David,Red,3,R. Gavi Schwei,Review p.18 in the Reader
+Mayaani,Yellow,1,Morah Chana,Review p.36 in the Reader
+Briella,Orange,1,Morah Chana,Review p.36 in the Reader
+Lauren,Yellow,3,R. Yisroel Cotlar,Review p.3 in the Reader
+Jacob,Violet,1,R. Yisroel Cotlar,Review p.3 in the Reader
