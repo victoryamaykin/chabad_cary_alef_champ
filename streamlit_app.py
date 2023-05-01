@@ -47,6 +47,10 @@ if password == pw:
             df.loc[df['student_name'] == student_name, 'stripe'] = stripe
             df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
             df.loc[df['student_name'] == student_name, 'homework_2'] = homework_2
+            
+        # Display the updated dataframe
+        st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']])
+        
 else:
     st.sidebar.write('Incorrect password. Please contact database admin Victor Yamaykin.')
 
@@ -56,7 +60,6 @@ st.write('Teacher Name:', teacher_name)
 
 # Display the students
 st.write('**Student Levels**')
-keys = class_df['student_name'].values
 st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']])
 
 # Display the parent's homework
