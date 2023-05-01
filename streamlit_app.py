@@ -30,8 +30,8 @@ st.write('Teacher Name:', teacher_name)
 
 # Display the students
 st.write('**Student Levels**')
-keys = ['{}'.format(i) for i in class_df['student_name'].values] 
-st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']], keys=keys)
+# keys = ['{}'.format(i) for i in class_df['student_name'].values] 
+st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']])
 
 colors = {
   "red": "red",
@@ -47,7 +47,7 @@ colors = {
 
 def get_color(level):
   level = level.lower()
-  return colors.get(level)
+  return colors[level]
 
 st.table(df, style={f'{student_name}': {'background-color': get_color(df['level'])}})
 
