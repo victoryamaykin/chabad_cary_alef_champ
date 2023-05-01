@@ -24,13 +24,13 @@ with st.form('update_df'):
     
     # Get the stripe
     stripe = st.number_input('Stripe')
-
+    
+    submitted = st.form_submit_button("Submit")
+    
     # Update the dataframe
-    if st.button('Update'):
+    if submitted:
         df.loc[df['student_name'] == student_name, 'level'] = level
         df.loc[df['student_name'] == student_name, 'stripe'] = stripe
-        
-    st.form_submit_button()
 
 # Display the student's information
 st.write('**Class Information**')
