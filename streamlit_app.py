@@ -17,7 +17,7 @@ class_df = df[df['teacher'] == teacher_name]
 # Create a dropdown menu for the students in that class
 student_name = st.sidebar.selectbox('Select a student', class_df['student_name'].values)
 
-password = st.text_input('Enter password to update')
+password = st.sidebar.text_input('Enter password to update')
 
 # If the password is corect, show the update form
 if password == pw:
