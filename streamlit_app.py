@@ -17,7 +17,7 @@ class_df = df[df['teacher'] == teacher_name]
 student_name = st.sidebar.selectbox('Select a student', class_df['student_name'].values)
 
 # Create a form
-with st.form('update_df'):
+with st.sidebar.form('update_df'):
     
     st.write(f"Update progress for {student_name}")
     
