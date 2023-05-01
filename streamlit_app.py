@@ -28,5 +28,3 @@ st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', '
 # Display the student's homework
 st.write('**Homework for Parents**')
 st.table(df[df['student_name'] == student_name][['homework_2']])
-st.write('**Goal**')
-st.table(df[df['student_name'] == student_name][['homework_3']])
