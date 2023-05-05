@@ -29,9 +29,7 @@ if password == pw:
     # Create a form
     with st.sidebar.form('update_df'):
 
-        st.write("Update progress")
-
-        name = st.text_input('Add new student')
+        st.write(f"Update progress for {student_name}")
         
         levels = ["White", "Red", "Orange", "Yellow", "Green", "Blue"]
         
@@ -46,26 +44,16 @@ if password == pw:
                           index = stripes.index(df.loc[df['student_name'] == student_name, 'stripe'].values.item()))
 
         # student homework
-        homework_1 = st.text_input(f"Enter homework")
+        homework_1 = st.text_input(f"Enter homework for {student_name}")
 
         submitted = st.form_submit_button("Submit")
 
         # Update the dataframe
         if submitted:
-            if df['student_name'].isin([name]).any():
-                st.write("Student already in the database")
-            elif name == student_name:
-                df.loc[df['student_name'] == student_name, 'level'] = level
-                df.loc[df['student_name'] == student_name, 'stripe'] = stripe
-                df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
-            else: 
-                new_student = {'student_name': name, \
-                                            'level': level, \
-                                           'stripe': stripe, \
-                                           'teacher': teacher_name, \
-                                           'homework_1': homework_1}
-                df = df.append(new_student, ignore_index = True)
-      
+            df.loc[df['student_name'] == student_name, 'level'] = level
+            df.loc[df['student_name'] == student_name, 'stripe'] = stripe
+            df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
+
 # Display the student's information
 st.write('**Class Information**')
 st.write('Teacher Name:', teacher_name)
