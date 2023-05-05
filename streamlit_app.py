@@ -56,8 +56,10 @@ if password == pw:
 
 # Display the student's information
 st.write('**Class Information**')
-st.write(f'###**Teacher Name:** {teacher_name}')
+st.write('***********'
+st.write(f'**Teacher Name:** {teacher_name}')
+ st.write('***********'
 
 # Display the students
-st.write('**Student Levels**')
+st.write('**Chabad of Cary: Alef Champ**')
 st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']])
