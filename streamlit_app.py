@@ -18,7 +18,7 @@ class_df = df[df['teacher'] == teacher_name]
 # Create a dropdown menu for the students in that class
 student_name = st.sidebar.selectbox('Select a student', class_df['student_name'].values)
 
-password = st.sidebar.text_input(f'Enter password to update for {student_name}')
+password = st.sidebar.text_input(f'Enter password to update')
 # debug mode
 password = 'matzah613'
 
@@ -30,7 +30,7 @@ if password == pw:
 
         st.write(f"Update progress")
 
-        name = st.text_input('Retype Student name or add new student')
+        name = st.text_input('Add new student')
         
         levels = ["White", "Red", "Orange", "Yellow", "Green", "Blue"]
         
@@ -45,7 +45,7 @@ if password == pw:
                           index = stripes.index(df.loc[df['student_name'] == student_name, 'stripe'].values.item()))
 
         # student homework
-        homework_1 = st.text_input(f"Enter homework for {student_name}")
+        homework_1 = st.text_input(f"Enter homework")
 
         submitted = st.form_submit_button("Submit")
 
@@ -69,4 +69,4 @@ st.write('Teacher Name:', teacher_name)
 
 # Display the students
 st.write('**Student Levels**')
-st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']])
+st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']], sort_columns=['student_name', 'level'])
