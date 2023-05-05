@@ -56,7 +56,7 @@ if password == pw:
 
 # Display the student's information
 st.write('**Class Information**')
-st.write('Teacher Name:', teacher_name)
+st.write(f'**Teacher Name:** ##{teacher_name}##')
 
 # Display the students
 st.write('**Student Levels**')
