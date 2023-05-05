@@ -56,12 +56,12 @@ if password == pw:
                 df.loc[df['student_name'] == student_name, 'stripe'] = stripe
                 df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
             else: 
-                new_student = pd.DataFrame({'student_name': name, \
+                new_student = {'student_name': name, \
                                             'level': level, \
                                            'stripe': stripe, \
                                            'teacher': teacher_name, \
-                                           'homework_1': homework_1})
-                df = df.append(new_student, ignore_index=True)
+                                           'homework_1': homework_1}
+                df.loc[len(df)] = new_student
       
 # Display the student's information
 st.write('**Class Information**')
