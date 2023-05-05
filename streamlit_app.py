@@ -69,4 +69,4 @@ st.write('Teacher Name:', teacher_name)
 
 # Display the students
 st.write('**Student Levels**')
-st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']], sort_by='Level', sort_ascending=True)
+st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']])
