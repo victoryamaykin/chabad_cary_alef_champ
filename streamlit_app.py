@@ -54,7 +54,7 @@ if password == pw:
         if submitted:
             if df['student_name'].isin([name]).any():
                 st.write("Student already in the database")
-            else if name == student_name:
+            elif name == student_name:
                 df.loc[df['student_name'] == student_name, 'level'] = level
                 df.loc[df['student_name'] == student_name, 'stripe'] = stripe
                 df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
