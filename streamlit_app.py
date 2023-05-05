@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import re
 from pw import pw
+import pyarrow as pa
 
 # Load the data
 df = pd.read_csv('hebrew_school_data.csv')
@@ -28,7 +29,7 @@ if password == pw:
     # Create a form
     with st.sidebar.form('update_df'):
 
-        st.write(f"Update progress")
+        st.write("Update progress")
 
         name = st.text_input('Add new student')
         
@@ -51,7 +52,9 @@ if password == pw:
 
         # Update the dataframe
         if submitted:
-            if name == student_name:
+            if df['student_name'].isin([name]).any():
+                st.write("Student already in the database")
+            else if name == student_name:
                 df.loc[df['student_name'] == student_name, 'level'] = level
                 df.loc[df['student_name'] == student_name, 'stripe'] = stripe
                 df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
@@ -61,7 +64,7 @@ if password == pw:
                                            'stripe': stripe, \
                                            'teacher': teacher_name, \
                                            'homework_1': homework_1}
-                df.loc[len(df)] = new_student
+                df = df.append(new_student, ignore_index = True)
       
 # Display the student's information
 st.write('**Class Information**')
