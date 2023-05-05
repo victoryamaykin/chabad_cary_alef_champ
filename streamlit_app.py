@@ -6,7 +6,8 @@ from pw import pw
 import pyarrow as pa
 
 # Load the data
-df = pd.read_csv('hebrew_school_data.csv')
+file_name = 'hebrew_school_data.csv'
+df = pd.read_csv(file_name)
 
 # Create a sidebar
 st.sidebar.title('Hebrew School Alef Champ Progress Tracker')
@@ -53,6 +54,7 @@ if password == pw:
             df.loc[df['student_name'] == student_name, 'level'] = level
             df.loc[df['student_name'] == student_name, 'stripe'] = stripe
             df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
+            df.to_csv(file_name, sep=',')
 
 # Display the student's information
 st.write('**Chabad of Cary: Alef Champ**')
