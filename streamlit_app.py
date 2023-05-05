@@ -3,11 +3,15 @@ import streamlit as st
 import pandas as pd
 import re
 from pw import pw
-import pyarrow as pa
+import gspread as gs
+
+# Client object
+client = gs.Client()
+
+sheet = client.open_by_key('1Uv4XA8Mds3KmICjsYx6Em6XpczoRAWN0nYqSEUkuJ8U')
 
 # Load the data
-file_name = 'hebrew_school_data.csv'
-df = pd.read_csv(file_name)
+df = sheet.get_all_values()
 
 # Create a sidebar
 st.sidebar.title('Hebrew School Alef Champ Progress Tracker')
