@@ -3,7 +3,8 @@ import streamlit as st
 import pandas as pd
 import re
 from pw import pw
-import gspread as gs
+!pip install gspread
+import gspread
 
 # Client object
 client = gs.Client()
