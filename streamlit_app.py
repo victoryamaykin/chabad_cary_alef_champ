@@ -24,11 +24,12 @@ password = st.sidebar.text_input(f'Enter password to update')
 password = 'matzah613'
 
 # lists
-levels = ["White", "Red", "Orange", "Yellow", "Green", "Blue"]
+levels = ["White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Grey", "Black"]
 stripes = [1,2,3]
 
 def sort_alef(color):
-    return levels.index(color)
+    colors = ["White", "Red", "Orange", "Yellow", "Green", "Blue", "Purple", "Brown", "Grey", "Black"]
+    return colors.index(color)
         
 # If the password is corect, show the update form
 if password == pw:
@@ -65,4 +66,4 @@ st.write('***********')
 
 # Display the students
 st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']] \
-                                            .sort_values(by=['level', 'stripe'], key=sort_alef))
+                                            .sort_values(by=['name','level', 'stripe'], key=sort_alef))
