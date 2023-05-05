@@ -23,6 +23,13 @@ password = st.sidebar.text_input(f'Enter password to update')
 # debug mode
 password = 'matzah613'
 
+# lists
+levels = ["White", "Red", "Orange", "Yellow", "Green", "Blue"]
+stripes = [1,2,3]
+
+def sort_alef(color):
+    return levels.index(color)
+        
 # If the password is corect, show the update form
 if password == pw:
 
@@ -31,13 +38,9 @@ if password == pw:
 
         st.write(f"Update progress for {student_name}")
         
-        levels = ["White", "Red", "Orange", "Yellow", "Green", "Blue"]
-        
         # Get the level 
         level = st.radio('Level', options = levels, \
                          index = levels.index(df.loc[df['student_name'] == student_name, 'level'].values.item()))
-        
-        stripes = [1,2,3]
         
         # Get the stripe
         stripe = st.radio('Stripe', options = stripes, \
@@ -61,4 +64,5 @@ st.write(f'**Teacher Name:** {teacher_name}')
 st.write('***********')
 
 # Display the students
-st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']].sort_values(by=['level', 'stripe']))
+st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', 'homework_1']] \
+                                            .sort_values(by=['level', 'stripe'], key=sort_alef))
