@@ -58,7 +58,7 @@ if password == pw:
 st.write('**Class Information**')
 st.write('***********')
 st.write(f'**Teacher Name:** {teacher_name}')
- st.write('***********')
+st.write('***********')
 
 # Display the students
 st.write('**Chabad of Cary: Alef Champ**')
