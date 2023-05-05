@@ -57,6 +57,8 @@ if password == pw:
             df.to_csv(file_name, sep=',')
 
 # Display the student's information
+st.write('<<< Open the sidebar to select classroom and update student progress.')
+st.write('***********')
 st.write('**Chabad of Cary: Alef Champ**')
 st.write('***********')
 st.write(f'**Teacher Name:** {teacher_name}')
