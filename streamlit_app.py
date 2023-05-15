@@ -3,8 +3,6 @@ import streamlit as st
 import pandas as pd
 import re
 from pw import pw
-!pip install matplotlib
-import matplotlib.pyplot as plt
 
 file_name = "hebrew_school_data.csv"
 progress_file = "student_progress_report.csv" 
@@ -39,10 +37,6 @@ if password == pw:
     with st.sidebar.form('update_df'):
 
         st.write(f"Update progress for {student_name}")
-        
-        student_progress = progress_df.loc[progress_df['student_name'] == student_name]
-        fig = plt.plot(x="level", y="stripe", data = student_progress, linewidth=3)
-        st.pyplot(fig)
         
         # Today's date
         date = st.date_input()
