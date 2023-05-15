@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import re
 from pw import pw
+!pip install matplotlib
 import matplotlib.pyplot as plt
 
 file_name = "hebrew_school_data.csv"
