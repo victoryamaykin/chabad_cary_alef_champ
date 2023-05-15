@@ -1,9 +1,49 @@
-student_name,level,stripe,teacher,homework_1
-Adam,Yellow,1,R. Gavi Schwei,Review p.1 in the Reader
-David,Red,3,R. Gavi Schwei,Review p.18 in the Reader
-Ben,Red,2,R. Gavi Schwei,Review p.18 in the Reader
-Miriam,Red,2,R. Gavi Schwei,Review p.18 in the Reader
-Yitzhak,Yellow,1,Morah Chana,Review p.3 in the Reader
-Chaim,Orange,1,Morah Chana,Review p.36 in the Reader
-Yakov,Yellow,3,R. Yisroel Cotlar,Review p.3 in the Reader
-Chava,Purple,1,R. Yisroel Cotlar,Review p.3 in the Reader
+last_name,first_name,student_name,level,stripe,teacher,homework
+Berger,Jessica,Jessica Berger,Yellow,1,R. Gavi Schwei,
+Cohen,Mila,Mila Cohen,Yellow,1,R. Gavi Schwei,
+Gitarts,Sophia,Sophia Gitarts,Orange,1,R. Gavi Schwei,
+Goldsmith,Miles,Miles Goldsmith,Red,1,R. Gavi Schwei,
+Kelley,Luke,Luke Kelley,Red,1,R. Gavi Schwei,
+Mishenko,Maya,Maya Mishenko,Red,1,R. Gavi Schwei,
+Nadler,Ryder,Ryder Nadler,Red,1,R. Gavi Schwei,
+Shnaidman,Jordan,Jordan Shnaidman,Red,1,R. Gavi Schwei,
+Todd,Nathan,Nathan Todd,Red,1,R. Gavi Schwei,
+Tracy,Francesca,Francesca Tracy,Red,1,R. Gavi Schwei,
+Ungurean,Ayla,Ayla Ungurean,Red,1,R. Gavi Schwei,
+Abitbul,Emily,Emily Abitbul,Red,1,R. Gavi Schwei,
+Nelson,Chloe,Chloe Nelson,Red,1,R. Gavi Schwei,
+Avery,Josie,Josie Avery,Red,1,R. Gavi Schwei,
+Avery,Nikita,Nikita Avery,Green,1,Morah Chana,
+Burbea,Dori,Dori Burbea,Green,1,Morah Chana,
+Cohen ,Hallie,Hallie Cohen ,Green,1,Morah Chana,
+Dickson,Taco,Taco Dickson,Green,1,Morah Chana,
+Gitarts,Briella,Briella Gitarts,Green,1,Morah Chana,
+Hertzberg,Charlotte,Charlotte Hertzberg,Green,1,Morah Chana,
+Lazarovich,Eitan,Eitan Lazarovich,Green,1,Morah Chana,
+Leeder,Autumn,Autumn Leeder,Green,1,Morah Chana,
+Mishenko,Gavriel,Gavriel Mishenko,Green,1,Morah Chana,
+Nissinfeld,Jack,Jack Nissinfeld,Green,1,Morah Chana,
+Reznik,Nathan,Nathan Reznik,Green,1,Morah Chana,
+Shishler,Kayli,Kayli Shishler,Blue,1,Morah Chana,
+Shnaidman,Ethan,Ethan Shnaidman,Blue,1,Morah Chana,
+Tracy,Anderson,Anderson Tracy,Blue,1,Morah Chana,
+Sinaya,Henis,Henis Sinaya,Blue,1,Morah Chana,
+Nagi,Ma’ayan,Ma’ayan Nagi,Blue,1,Morah Chana,
+Kirk ,Brayden,Brayden Kirk ,Blue,1,Morah Chana,
+Berger,Lauren,Lauren Berger,Yellow,1,R. Yisroel Cotlar,
+Borochov,Jacob,Jacob Borochov,Purple,3,R. Yisroel Cotlar,
+Cohen,Tali,Tali Cohen,Green,1,R. Yisroel Cotlar,
+Dickson,Maxwell,Maxwell Dickson,Green,1,R. Yisroel Cotlar,
+Goldsmith,Sophia,Sophia Goldsmith,Green,1,R. Yisroel Cotlar,
+Hertzberg,Malcolm,Malcolm Hertzberg,Green,1,R. Yisroel Cotlar,
+Kelley,Cameron,Cameron Kelley,Green,1,R. Yisroel Cotlar,
+Kirk,Ashley,Ashley Kirk,Green,1,R. Yisroel Cotlar,
+Levine,Jordan,Jordan Levine,Green,1,R. Yisroel Cotlar,
+Lipkin,Jack,Jack Lipkin,Green,1,R. Yisroel Cotlar,
+Mandel,Calliope,Calliope Mandel,Green,1,R. Yisroel Cotlar,
+Medoff,Alice,Alice Medoff,Green,1,R. Yisroel Cotlar,
+Nagi,Adino,Adino Nagi,Green,1,R. Yisroel Cotlar,
+Nissinfeld,Mia,Mia Nissinfeld,Green,1,R. Yisroel Cotlar,
+Reznik,Emily,Emily Reznik,Green,1,R. Yisroel Cotlar,
+Sivin,Eli,Eli Sivin,Green,1,R. Yisroel Cotlar,
+Manu,Henis,Henis Manu,Green,1,R. Yisroel Cotlar,
