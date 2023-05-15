@@ -3,11 +3,14 @@ import streamlit as st
 import pandas as pd
 import re
 from pw import pw
+import seaborn as sns
 
 file_name = "hebrew_school_data.csv"
+progress_file = "student_progress_report.csv" 
 
 # Load the data
 df = pd.read_csv(file_name)
+progress_df = pd.read_csv(progress_file)
 
 # Create a sidebar
 st.sidebar.title('Hebrew School Alef Champ Progress Tracker')
@@ -36,6 +39,12 @@ if password == pw:
 
         st.write(f"Update progress for {student_name}")
         
+        student_progress = progress_df.query(f"student_name == {student_name}")
+        sns.lineplot(data=student_progress, x="level", y="stripe")
+        
+        # Today's date
+        date = st.date_input()
+        
         # Get the level 
         level = st.radio('Level', options = levels, \
                          index = levels.index(df.loc[df['student_name'] == student_name, 'level'].values.item()))
@@ -45,16 +54,23 @@ if password == pw:
                           index = stripes.index(df.loc[df['student_name'] == student_name, 'stripe'].values.item()))
 
         # student homework
-        homework_1 = st.text_input(f"Enter homework for {student_name}")
+        homework = st.text_input(f"Enter homework for {student_name}")
 
         submitted = st.form_submit_button("Submit")
 
         # Update the dataframe
         if submitted:
+            # Save to current roster
             df.loc[df['student_name'] == student_name, 'level'] = level
             df.loc[df['student_name'] == student_name, 'stripe'] = stripe
-            df.loc[df['student_name'] == student_name, 'homework'] = homework_1
+            df.loc[df['student_name'] == student_name, 'homework'] = homework
             df.to_csv(file_name, sep=',')
+        
+            # Save progess to progress report
+            progress_df.loc[progress_df['student_name'] == student_name, 'date'] = date
+            progress_df.loc[progress_df['student_name'] == student_name, 'level'] = level
+            progress_df.loc[progress_df['student_name'] == student_name, 'stripe'] = stripe
+            progress_df.to_csv(progress_file, sep=',')
 
 # Display the student's information
 st.write('<<< Open the sidebar to select classroom and update student progress.')
