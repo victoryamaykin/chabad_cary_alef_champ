@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import re
 from pw import pw
+from datetime import date
 
 file_name = "hebrew_school_data.csv"
 progress_file = "student_progress_report.csv" 
@@ -39,7 +40,7 @@ if password == pw:
         st.write(f"Update progress for {student_name}")
         
         # Today's date
-        date = st.date_input()
+        date = st.date_input("Select Date", value=date.today())
         
         # Get the level 
         level = st.radio('Level', options = levels, \
