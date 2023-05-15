@@ -4,8 +4,6 @@ import pandas as pd
 import re
 from pw import pw
 import matplotlib.pyplot as plt
-import mpld3
-import streamlit.components.v1 as components
 
 file_name = "hebrew_school_data.csv"
 progress_file = "student_progress_report.csv" 
@@ -43,9 +41,7 @@ if password == pw:
         
         student_progress = progress_df.loc[progress_df['student_name'] == student_name]
         fig = plt.plot(x="level", y="stripe", data = student_progress, linewidth=3)
-        fig_html = mpld3.fig_to_html(fig)
-        components.html(fig_html, height=300)
-        
+        st.pyplot(fig)
         
         # Today's date
         date = st.date_input()
