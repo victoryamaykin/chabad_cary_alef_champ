@@ -53,7 +53,7 @@ if password == pw:
         if submitted:
             df.loc[df['student_name'] == student_name, 'level'] = level
             df.loc[df['student_name'] == student_name, 'stripe'] = stripe
-            df.loc[df['student_name'] == student_name, 'homework_1'] = homework_1
+            df.loc[df['student_name'] == student_name, 'homework'] = homework_1
             df.to_csv(file_name, sep=',')
 
 # Display the student's information
@@ -66,4 +66,4 @@ st.write('***********')
 
 # Display the students
 st.table(df[df['teacher'] == teacher_name][['student_name', 'level', 'stripe', \
-                                            'homework_1']].sort_values(by=['level', 'stripe']))
+                                            'homework']].sort_values(by=['level', 'stripe']))
