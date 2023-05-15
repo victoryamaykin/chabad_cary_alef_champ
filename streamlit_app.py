@@ -4,7 +4,7 @@ import pandas as pd
 import re
 from pw import pw
 
-file_name = "hebrew_school_data_1.csv"
+file_name = "hebrew_school_data.csv"
 
 # Load the data
 df = pd.read_csv(file_name)
