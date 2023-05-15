@@ -3,7 +3,9 @@ import streamlit as st
 import pandas as pd
 import re
 from pw import pw
-import seaborn as sns
+import matplotlib.pyplot as plt
+import mpld3
+import streamlit.components.v1 as components
 
 file_name = "hebrew_school_data.csv"
 progress_file = "student_progress_report.csv" 
@@ -39,8 +41,11 @@ if password == pw:
 
         st.write(f"Update progress for {student_name}")
         
-        student_progress = progress_df.query(f"student_name == {student_name}")
-        sns.lineplot(data=student_progress, x="level", y="stripe")
+        student_progress = progress_df.loc[progress_df['student_name'] == student_name]
+        fig = plt.plot(x="level", y="stripe", data = student_progress, linewidth=3)
+        fig_html = mpld3.fig_to_html(fig)
+        components.html(fig_html, height=300)
+        
         
         # Today's date
         date = st.date_input()
