@@ -39,8 +39,11 @@ if password == pw:
 
         st.write(f"Update progress for {student_name}")
         
-        st.table(progress_df[progress_df['student_name'] == student_name][['date', 'student_name', 'level', 'stripe']]
-        
+        if progress_df[progress_df['student_name'] == student_name]:
+                st.table(progress_df[progress_df['student_name'] == student_name][['date', 'student_name', 'level', 'stripe']])
+        else:
+                continue 
+                
         # Today's date
         date = st.date_input("Select Date", value=date.today())
         
