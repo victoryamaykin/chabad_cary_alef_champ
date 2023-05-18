@@ -69,9 +69,7 @@ if password == pw:
             df.to_csv(file_name, sep=',')
         
             # Save progess to progress report
-            progress_df.loc[progress_df['student_name'] == student_name, 'date'] = date
-            progress_df.loc[progress_df['student_name'] == student_name, 'level'] = level
-            progress_df.loc[progress_df['student_name'] == student_name, 'stripe'] = stripe
+            progress_df.loc[len(progress_df)] = [date, level, stripe]
             progress_df.to_csv(progress_file, sep=',')
 
 # Display the student's information
