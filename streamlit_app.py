@@ -70,6 +70,7 @@ if password == pw:
         
             # Save progess to progress report
             progress_df = pd.concat([progress_df, pd.Series([date, student_name, level, stripe])], ignore_index = True)
+            st.table(progress_df[progress_df['student_name'] == student_name][['date', 'student_name', 'level', 'stripe']])
             progress_df.to_csv(progress_file, sep=',')
 
 # Display the student's information
