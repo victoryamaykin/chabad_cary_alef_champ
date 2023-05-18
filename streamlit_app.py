@@ -40,7 +40,7 @@ if password == pw:
         st.write(f"Update progress for {student_name}")
         
         if not isinstance(progress_df[progress_df['student_name'] == student_name], type(None)):
-                st.table(progress_df[progress_df['student_name'] == student_name][['date', 'student_name', 'level', 'stripe']])
+                st.table(progress_df[progress_df['student_name'] == student_name][['date', 'level', 'stripe']])
         else:
                 st.write("no past progress records yet")
                 
