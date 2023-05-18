@@ -40,7 +40,7 @@ if password == pw:
         st.write(f"Update progress for {student_name}")
         
         if not isinstance(progress_df[progress_df['student_name'] == student_name], type(None)):
-                st.table(progress_df[progress_df['student_name'] == student_name][['date', 'level', 'stripe']])
+                st.table(progress_df[progress_df['student_name'] == student_name][['date', 'student_name', 'level', 'stripe']])
         else:
                 st.write("no past progress records yet")
                 
@@ -69,7 +69,7 @@ if password == pw:
             df.to_csv(file_name, sep=',')
         
             # Save progess to progress report
-            progress_df = progress_df.append({'date': date, 'student_name': student_name, 'level': level, 'stripe': stripe}, ignore_index=True)
+            progress_df = pd.concat([progress_df, pd.Series([date, student_name, level, stripe])], ignore_index = True)
             progress_df.to_csv(progress_file, sep=',')
 
 # Display the student's information
